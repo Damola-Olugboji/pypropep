@@ -1,4 +1,5 @@
 import os
+import pathlib
 from attrdict import AttrDict
 from .cpropep._cpropep import ffi, lib
 
@@ -10,9 +11,9 @@ from pypropep.performance import RocketPerformance, FrozenPerformance, \
 __all__ = ['Propellant', 'Equilibrium', 'RocketPerformance',
            'FrozenPerformance', 'ShiftingPerformance', 'init']
 
-FILE_PATH = os.path.abspath(__file__)
-THERMO_FILE = os.path.dirname(FILE_PATH) + '/data/thermo.dat'
-PROPELLANT_FILE = os.path.dirname(FILE_PATH) + '/data/propellant.dat'
+FILE_PATH = pathlib.Path(__file__).parent.absolute()
+THERMO_FILE = os.path.dirname(FILE_PATH) + '/thermo.dat'
+PROPELLANT_FILE = os.path.dirname(FILE_PATH) + '/propellant.dat'
 
 def __convert_struct_field(s, fields):
     for field, fieldtype in fields:
