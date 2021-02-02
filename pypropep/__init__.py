@@ -11,7 +11,7 @@ from pypropep.performance import RocketPerformance, FrozenPerformance, \
 __all__ = ['Propellant', 'Equilibrium', 'RocketPerformance',
            'FrozenPerformance', 'ShiftingPerformance', 'init']
 
-FILE_PATH = pathlib.Path(__file__).parent.absolute()
+FILE_PATH = pathlib.Path().absolute()
 THERMO_FILE = os.path.dirname(FILE_PATH) + '/thermo.dat'
 PROPELLANT_FILE = os.path.dirname(FILE_PATH) + '/propellant.dat'
 
